@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="2af0c438-bab0-4d0c-987f-0beaf0f7c7f2" version="1">
+  <Properties>
+    <Name>后期终局：附庸与觉醒</Name>
+    <Description>默认观测文明实力与觉醒条件，可选影子附庸演练、项目加成和觉醒战争实验；真实附庸移交与胜利限制仍待原生验证。</Description>
+    <Created>1790849000</Created>
+  <Teaser>默认只观测；影子附庸、项目加成和觉醒实验需单独开启。</Teaser>
+    <Authors>Haikesi 项目</Authors>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <References>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </References>
+  <ActionCriteria>
+    <Criteria id="EC_NATIVE_VICTORY_MODE">
+      <ConfigurationValueMatches><Group>Game</Group><ConfigurationId>EC_AWAKENING_ACTIONS_TEST</ConfigurationId><Value>1</Value></ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_NATIVE_VASSAL_MODE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group><ConfigurationId>EC_NATIVE_VASSAL_TEST</ConfigurationId><Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_NATIVE_LIFECYCLE_PROBE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group><ConfigurationId>EC_NATIVE_LIFECYCLE_TEST</ConfigurationId><Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_NATIVE_LIFECYCLE_MARKER_PROBE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group><ConfigurationId>EC_NATIVE_LIFECYCLE_TEST</ConfigurationId><Value>2</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION_ONLINE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAME_SPEED_TYPE</ConfigurationId>
+        <Value>GAMESPEED_ONLINE</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION_QUICK">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAME_SPEED_TYPE</ConfigurationId>
+        <Value>GAMESPEED_QUICK</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION_STANDARD">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAME_SPEED_TYPE</ConfigurationId>
+        <Value>GAMESPEED_STANDARD</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION_EPIC">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAME_SPEED_TYPE</ConfigurationId>
+        <Value>GAMESPEED_EPIC</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="EC_AI_MILITARY_PRODUCTION_MARATHON">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>EC_AI_MILITARY_PRODUCTION_TEST</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GAME_SPEED_TYPE</ConfigurationId>
+        <Value>GAMESPEED_MARATHON</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateDatabase id="EC_Config">
+      <File>Data/EC_Config_FE.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="EC_FrontEndText">
+      <File>Text/EC_Text.xml</File>
+    </UpdateText>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateDatabase id="EC_NativeVictoryRules">
+      <Criteria>EC_NATIVE_VICTORY_MODE</Criteria>
+      <Properties><LoadOrder>19000</LoadOrder></Properties>
+      <File>Data/EC_VictoryRules.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="EC_NativeVictoryIcons"><Criteria>EC_NATIVE_VICTORY_MODE</Criteria><File>Data/EC_VictoryIcons.xml</File></UpdateIcons>
+    <UpdateDatabase id="EC_NativeVassalRules">
+      <Criteria>EC_NATIVE_VASSAL_MODE</Criteria>
+      <File>Data/EC_LifecycleExperiment.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="EC_NativeVassalIcons">
+      <Criteria>EC_NATIVE_VASSAL_MODE</Criteria>
+      <File>Data/EC_LifecycleIcons.xml</File>
+    </UpdateIcons>
+    <UpdateDatabase id="EC_NativeLifecycleProbe">
+      <Criteria>EC_NATIVE_LIFECYCLE_PROBE</Criteria>
+      <File>Data/EC_LifecycleControl.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_NativeLifecycleMarkerProbe">
+      <Criteria>EC_NATIVE_LIFECYCLE_MARKER_PROBE</Criteria>
+      <File>Data/EC_LifecycleExperiment.sql</File>
+    </UpdateDatabase>
+    <UpdateIcons id="EC_NativeLifecycleIcons">
+      <Criteria>EC_NATIVE_LIFECYCLE_MARKER_PROBE</Criteria>
+      <File>Data/EC_LifecycleIcons.xml</File>
+    </UpdateIcons>
+    <UpdateText id="EC_InGameText">
+      <File>Text/EC_Text.xml</File>
+    </UpdateText>
+    <UpdateDatabase id="EC_ProjectEffects">
+      <File>Data/EC_ProjectEffects.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AwakeningEffects">
+      <File>Data/EC_AwakeningEffects.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProduction">
+      <Properties>
+        <LoadOrder>16905</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION</Criteria>
+      <File>Data/EC_AIMilitaryProduction.xml</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryDoctrine">
+      <Properties>
+        <LoadOrder>16906</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION</Criteria>
+      <File>Data/EC_AIMilitaryDoctrine.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProductionOnline">
+      <Properties>
+        <LoadOrder>16907</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION_ONLINE</Criteria>
+      <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Online.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProductionQuick">
+      <Properties>
+        <LoadOrder>16907</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION_QUICK</Criteria>
+      <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Quick.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProductionStandard">
+      <Properties>
+        <LoadOrder>16907</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION_STANDARD</Criteria>
+      <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Standard.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProductionEpic">
+      <Properties>
+        <LoadOrder>16907</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION_EPIC</Criteria>
+      <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Epic.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="EC_AIMilitaryProductionMarathon">
+      <Properties>
+        <LoadOrder>16907</LoadOrder>
+      </Properties>
+      <Criteria>EC_AI_MILITARY_PRODUCTION_MARATHON</Criteria>
+      <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Marathon.sql</File>
+    </UpdateDatabase>
+    <AddGameplayScripts id="EC_Gameplay">
+      <Properties>
+        <LoadOrder>16910</LoadOrder>
+      </Properties>
+      <File>GamePlay/EC_GamePlay.lua</File>
+    </AddGameplayScripts>
+    <ImportFiles id="EC_RuleFiles">
+      <File>GamePlay/EC_AIProductionCredit.lua</File>
+      <File>GamePlay/EC_HumanProductionRefund.lua</File>
+      <File>GamePlay/EC_ProductionArchive.lua</File>
+      <File>GamePlay/EC_ProductionRestore.lua</File>
+      <File>GamePlay/EC_NativeVassals.lua</File>
+      <File>GamePlay/EC_CityPayload.lua</File>
+      <File>GamePlay/EC_NativeCityAdapter.lua</File>
+      <File>GamePlay/EC_NativeLifecycle.lua</File>
+      <File>GamePlay/EC_Eligibility.lua</File>
+      <File>GamePlay/EC_DataStore.lua</File>
+      <File>GamePlay/EC_WarContext.lua</File>
+      <File>GamePlay/EC_EligibilityObserver.lua</File>
+      <File>GamePlay/EC_Protection.lua</File>
+      <File>GamePlay/EC_AwakeningActions.lua</File>
+      <File>GamePlay/EC_AIMilitaryProduction.lua</File>
+      <File>GamePlay/EC_VassalTransaction.lua</File>
+      <File>GamePlay/EC_VictoryPolicy.lua</File>
+      <File>GamePlay/EC_NativeVictory.lua</File>
+      <File>GamePlay/EC_AutonomyPolicy.lua</File>
+    </ImportFiles>
+    <!-- Model is a support Lua module included by the overview panel. -->
+    <ImportFiles id="EC_OverviewModelFile">
+      <File>UI/EC_OverviewModel.lua</File>
+    </ImportFiles>
+    <!-- Keep the previously discovered action IDs so an in-process mod
+         reload can reuse Civ VI's existing action graph.  The overview
+         contexts remain separate and append-only, with late load orders so
+         common third-party LaunchBar additions are already present. -->
+    <AddUserInterfaces id="EC_ConsentUI">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>29999</LoadOrder>
+      </Properties>
+      <File>UI/EC_ConsentPopup.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="EC_MetricBridgeUI">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>29998</LoadOrder>
+      </Properties>
+      <File>UI/EC_MetricBridge.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="EC_ProductionBridgeUI">
+      <Properties><Context>InGame</Context><LoadOrder>29997</LoadOrder></Properties>
+      <File>UI/EC_ProductionBridge.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="EC_OverviewLaunchUI">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>30000</LoadOrder>
+      </Properties>
+      <File>UI/EC_OverviewLaunch.xml</File>
+    </AddUserInterfaces>
+    <AddUserInterfaces id="EC_OverviewPanelUI">
+      <Properties>
+        <Context>InGame</Context>
+        <LoadOrder>30001</LoadOrder>
+      </Properties>
+      <File>UI/EC_OverviewPanel.xml</File>
+    </AddUserInterfaces>
+  </InGameActions>
+  <Files>
+    <File>Data/EC_VictoryRules.sql</File>
+    <File>Data/EC_VictoryIcons.xml</File>
+    <File>GamePlay/EC_NativeVictory.lua</File>
+    <File>GamePlay/EC_ProductionArchive.lua</File>
+    <File>GamePlay/EC_ProductionRestore.lua</File>
+    <File>GamePlay/EC_AIProductionCredit.lua</File>
+    <File>GamePlay/EC_HumanProductionRefund.lua</File>
+    <File>GamePlay/EC_NativeVassals.lua</File>
+    <File>UI/EC_ProductionBridge.lua</File>
+    <File>UI/EC_ProductionBridge.xml</File>
+    <File>GamePlay/EC_CityPayload.lua</File>
+    <File>GamePlay/EC_NativeCityAdapter.lua</File>
+    <File>Data/EC_LifecycleControl.sql</File>
+    <File>Data/EC_LifecycleIcons.xml</File>
+    <File>Data/EC_LifecycleExperiment.sql</File>
+    <File>Data/EC_Config_FE.sql</File>
+    <File>Data/EC_ProjectEffects.xml</File>
+    <File>Data/EC_AwakeningEffects.xml</File>
+    <File>Data/EC_AIMilitaryProduction.xml</File>
+    <File>Data/EC_AIMilitaryDoctrine.sql</File>
+    <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Online.sql</File>
+    <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Quick.sql</File>
+    <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Standard.sql</File>
+    <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Epic.sql</File>
+    <File>Data/GameSpeeds/EC_AI_MilitaryProduction_Marathon.sql</File>
+    <File>GamePlay/EC_GamePlay.lua</File>
+    <File>GamePlay/EC_Eligibility.lua</File>
+    <File>GamePlay/EC_DataStore.lua</File>
+    <File>GamePlay/EC_WarContext.lua</File>
+    <File>GamePlay/EC_EligibilityObserver.lua</File>
+    <File>GamePlay/EC_Protection.lua</File>
+    <File>GamePlay/EC_AwakeningActions.lua</File>
+    <File>GamePlay/EC_AIMilitaryProduction.lua</File>
+    <File>GamePlay/EC_VassalTransaction.lua</File>
+    <File>GamePlay/EC_NativeLifecycle.lua</File>
+    <File>GamePlay/EC_VictoryPolicy.lua</File>
+    <File>GamePlay/EC_AutonomyPolicy.lua</File>
+    <File>Text/EC_Text.xml</File>
+    <File>UI/EC_ConsentPopup.lua</File>
+    <File>UI/EC_ConsentPopup.xml</File>
+    <File>UI/EC_MetricBridge.lua</File>
+    <File>UI/EC_MetricBridge.xml</File>
+    <File>UI/EC_OverviewLaunch.lua</File>
+    <File>UI/EC_OverviewLaunch.xml</File>
+    <File>UI/EC_OverviewPanel.lua</File>
+    <File>UI/EC_OverviewPanel.xml</File>
+    <File>UI/EC_OverviewModel.lua</File>
+  </Files>
+</Mod>
+

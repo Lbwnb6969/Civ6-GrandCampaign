@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Context FontStyle="Stroke">
+  <Box Size="parent,parent" Color="21,46,75,150" ConsumeMouse="1" />
+  <Grid ID="Panel" Anchor="C,C" Offset="0,30" Size="720,580" Style="WindowFrame" ConsumeMouse="1">
+    <Grid Anchor="C,T" Size="parent,42" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40">
+      <Label ID="Title" Anchor="C,C" Style="FontFlair24" ColorSet="ShellHeader" String="LOC_EC_OVERVIEW_TITLE" />
+    </Grid>
+    <Button ID="CloseButton" Anchor="R,T" Offset="-8,-5" Style="CloseButtonLarge" ToolTip="LOC_EC_OVERVIEW_CLOSE" />
+    <Label ID="Summary" Anchor="L,T" Offset="20,54" Size="680,auto" WrapWidth="680" Style="BodyTextDark18" />
+    <Label ID="Notice" Anchor="L,T" Offset="20,108" Size="680,auto" WrapWidth="680" Style="BodyTextDark16" String="LOC_EC_OVERVIEW_NOTICE" />
+    <ScrollPanel ID="ArchiveScroll" Anchor="C,T" Offset="0,174" Size="680,362" Vertical="1" AutoScrollBar="1">
+      <ScrollBar Anchor="R,T" Size="8,parent" Style="ScrollVerticalBar" />
+      <Stack ID="ArchiveStack" Anchor="L,T" Size="660,auto" StackGrowth="Bottom" StackPadding="8">
+        <Label ID="Empty" Size="650,auto" WrapWidth="650" Style="BodyTextDark18" String="LOC_EC_OVERVIEW_EMPTY" />
+      </Stack>
+    </ScrollPanel>
+    <Label ID="OperationStatus" Anchor="C,B" Offset="0,34" Size="680,auto" WrapWidth="680" Style="BodyTextDark16" />
+    <Label ID="ReadOnly" Anchor="C,B" Offset="0,12" Style="BodyTextDark16" String="LOC_EC_OVERVIEW_READ_ONLY" />
+  </Grid>
+  <Instance Name="EC_OverviewRow">
+    <Grid ID="Root" Size="650,86" Texture="Controls_SubHeader2" SliceCorner="20,2" SliceTextureSize="40,40" ConsumeMouse="0">
+      <Label ID="Name" Offset="12,8" Size="430,24" TruncateWidth="430" Style="FontNormal20" ColorSet="ShellHeader" />
+      <Label ID="Status" Anchor="R,T" Offset="12,10" Size="175,24" TruncateWidth="175" Style="BodyText16" />
+      <Label ID="Details" Offset="12,38" Size="626,auto" WrapWidth="626" Style="BodyText16" />
+      <Button ID="OperationButton" Anchor="R,B" Offset="12,8" Size="150,30" Style="ButtonSmall" Hidden="1">
+        <Label ID="OperationLabel" Anchor="C,C" Style="BodyText16" />
+      </Button>
+      <Button ID="ProjectButton" Anchor="L,B" Offset="12,8" Size="240,30" Style="ButtonSmall" Hidden="1">
+        <Label ID="ProjectLabel" Anchor="C,C" Style="BodyText16" />
+      </Button>
+    </Grid>
+  </Instance>
+</Context>

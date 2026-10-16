@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <!-- The action is criteria-gated by EC_AI_MILITARY_PRODUCTION_TEST. The
+       Lua module attaches these modifiers only to living major AI players. -->
+  <RequirementSets>
+    <Row RequirementSetId="EC_AI_MILITARY_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY2_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY5_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_TECH_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_TECH_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MERCENARIES_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_NATIONALISM_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MOBILIZATION_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+    <Row RequirementSetId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC_OWNER" RequirementSetType="REQUIREMENTSET_TEST_ALL"/>
+  </RequirementSets>
+  <Requirements>
+    <Row RequirementId="EC_AI_MILITARY_IS_AI" RequirementType="REQUIREMENT_PLAYER_IS_HUMAN" Inverse="1"/>
+    <!-- Steam's native player-war requirement also requires the opponent to
+         be known; no fabricated REQUIREMENT_PLAYER_IS_AT_WAR is used. -->
+    <Row RequirementId="EC_AI_MILITARY_IS_AT_WAR" RequirementType="REQUIREMENT_PLAYER_AT_WAR_AND_HAS_MET"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_TWO_CITIES" RequirementType="REQUIREMENT_COLLECTION_COUNT_ATLEAST"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_FIVE_CITIES" RequirementType="REQUIREMENT_COLLECTION_COUNT_ATLEAST"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_ENGINEERING_PRODUCTION" RequirementType="REQUIREMENT_PLAYER_HAS_TECHNOLOGY"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_COMBINED_ARMS_PRODUCTION" RequirementType="REQUIREMENT_PLAYER_HAS_TECHNOLOGY"/>
+    <!-- Mature AI projects use this engine requirement to gate production by civic. -->
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRADITION_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRAINING_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_DEFENSIVE_TACTICS_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MERCENARIES_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_NATIONALISM_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_SCORCHED_EARTH_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MOBILIZATION_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_RAPID_DEPLOYMENT_CIVIC" RequirementType="REQUIREMENT_PLAYER_HAS_CIVIC"/>
+  </Requirements>
+  <RequirementArguments>
+    <Row RequirementId="EC_AI_MILITARY_HAS_TWO_CITIES" Name="CollectionType" Value="COLLECTION_PLAYER_CITIES"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_TWO_CITIES" Name="Count" Value="2"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_FIVE_CITIES" Name="CollectionType" Value="COLLECTION_PLAYER_CITIES"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_FIVE_CITIES" Name="Count" Value="5"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_ENGINEERING_PRODUCTION" Name="TechnologyType" Value="TECH_MILITARY_ENGINEERING"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_COMBINED_ARMS_PRODUCTION" Name="TechnologyType" Value="TECH_COMBINED_ARMS"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRADITION_CIVIC" Name="CivicType" Value="CIVIC_MILITARY_TRADITION"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRAINING_CIVIC" Name="CivicType" Value="CIVIC_MILITARY_TRAINING"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_DEFENSIVE_TACTICS_CIVIC" Name="CivicType" Value="CIVIC_DEFENSIVE_TACTICS"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MERCENARIES_CIVIC" Name="CivicType" Value="CIVIC_MERCENARIES"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_NATIONALISM_CIVIC" Name="CivicType" Value="CIVIC_NATIONALISM"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_SCORCHED_EARTH_CIVIC" Name="CivicType" Value="CIVIC_SCORCHED_EARTH"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_MOBILIZATION_CIVIC" Name="CivicType" Value="CIVIC_MOBILIZATION"/>
+    <Row RequirementId="EC_AI_MILITARY_HAS_RAPID_DEPLOYMENT_CIVIC" Name="CivicType" Value="CIVIC_RAPID_DEPLOYMENT"/>
+  </RequirementArguments>
+  <RequirementSetRequirements>
+    <Row RequirementSetId="EC_AI_MILITARY_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_OWNER" RequirementId="EC_AI_MILITARY_IS_AT_WAR"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY2_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY2_OWNER" RequirementId="EC_AI_MILITARY_HAS_TWO_CITIES"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY5_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_CITY5_OWNER" RequirementId="EC_AI_MILITARY_HAS_FIVE_CITIES"/>
+    <Row RequirementSetId="EC_AI_MILITARY_TECH_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_TECH_OWNER" RequirementId="EC_AI_MILITARY_HAS_MILITARY_ENGINEERING_PRODUCTION"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_TECH_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_TECH_OWNER" RequirementId="EC_AI_MILITARY_IS_AT_WAR"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_TECH_OWNER" RequirementId="EC_AI_MILITARY_HAS_MILITARY_ENGINEERING_PRODUCTION"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_OWNER" RequirementId="EC_AI_MILITARY_IS_AT_WAR"/>
+    <Row RequirementSetId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_OWNER" RequirementId="EC_AI_MILITARY_HAS_COMBINED_ARMS_PRODUCTION"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRADITION_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_MILITARY_TRAINING_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_DEFENSIVE_TACTICS_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MERCENARIES_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MERCENARIES_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_MERCENARIES_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_NATIONALISM_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_NATIONALISM_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_NATIONALISM_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_SCORCHED_EARTH_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MOBILIZATION_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_MOBILIZATION_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_MOBILIZATION_CIVIC"/>
+    <Row RequirementSetId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_IS_AI"/>
+    <Row RequirementSetId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC_OWNER" RequirementId="EC_AI_MILITARY_HAS_RAPID_DEPLOYMENT_CIVIC"/>
+  </RequirementSetRequirements>
+  <Modifiers>
+    <Row ModifierId="EC_AI_MILITARY_PREWAR" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_WARTIME_OWNER"/>
+    <!-- Gathering Storm's all-unit purchase-cost modifier applies to both
+         military and civilian units; IncludeCivilian=0 below keeps this
+         experiment focused on AI military reinforcement spending. -->
+    <Row ModifierId="EC_AI_MILITARY_PREWAR_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST" OwnerRequirementSetId="EC_AI_MILITARY_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_PURCHASE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_UNITS_PURCHASE_COST" OwnerRequirementSetId="EC_AI_MILITARY_WARTIME_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_CITY2" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_CITY2_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_CITY5" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_CITY5_OWNER"/>
+    <!-- Native StartEra/EndEra bounds keep this midgame mobilization
+         bounded while reusing the military-production modifier. -->
+    <Row ModifierId="EC_AI_MILITARY_MIDGAME_SURGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_LATE_SURGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_HIGH_DIFFICULTY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="PLAYER_IS_HIGH_DIFFICULTY_AI"/>
+    <Row ModifierId="EC_AI_MILITARY_TECH_PRODUCTION" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_TECH_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_TECH_SURGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_WARTIME_TECH_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_SURGE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_MERCENARIES_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_MERCENARIES_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_NATIONALISM_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_NATIONALISM_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_MOBILIZATION_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_MOBILIZATION_CIVIC_OWNER"/>
+    <Row ModifierId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION" OwnerRequirementSetId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC_OWNER"/>
+  </Modifiers>
+  <ModifierArguments>
+    <Row ModifierId="EC_AI_MILITARY_PREWAR" Name="Amount" Value="20"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME" Name="Amount" Value="40"/>
+    <!-- Native effect semantics use a positive percentage for a purchase
+         discount in the existing Carthage/Ngazargamu contracts. -->
+    <Row ModifierId="EC_AI_MILITARY_PREWAR_PURCHASE" Name="Amount" Value="15"/>
+    <Row ModifierId="EC_AI_MILITARY_PREWAR_PURCHASE" Name="IncludeCivilian" Value="0"/>
+    <Row ModifierId="EC_AI_MILITARY_PREWAR_PURCHASE" Name="UnitDomain" Value="DOMAIN_ALL"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_PURCHASE" Name="Amount" Value="25"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_PURCHASE" Name="IncludeCivilian" Value="0"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_PURCHASE" Name="UnitDomain" Value="DOMAIN_ALL"/>
+    <Row ModifierId="EC_AI_MILITARY_CITY2" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_CITY5" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_MIDGAME_SURGE" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_MIDGAME_SURGE" Name="StartEra" Value="ERA_MEDIEVAL"/>
+    <Row ModifierId="EC_AI_MILITARY_MIDGAME_SURGE" Name="EndEra" Value="ERA_RENAISSANCE"/>
+    <Row ModifierId="EC_AI_MILITARY_LATE_SURGE" Name="Amount" Value="10"/>
+    <Row ModifierId="EC_AI_MILITARY_LATE_SURGE" Name="StartEra" Value="ERA_INDUSTRIAL"/>
+    <Row ModifierId="EC_AI_MILITARY_LATE_SURGE" Name="EndEra" Value="ERA_INFORMATION"/>
+    <!-- R76: high-difficulty AI receives a bounded extra push for military
+         units. The owner gate remains the native PLAYER_IS_HIGH_DIFFICULTY_AI
+         set; ordinary difficulty AI is unchanged. -->
+    <Row ModifierId="EC_AI_MILITARY_HIGH_DIFFICULTY" Name="Amount" Value="10"/>
+    <Row ModifierId="EC_AI_MILITARY_TECH_PRODUCTION" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_TECH_SURGE" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_WARTIME_COMBINED_ARMS_SURGE" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_MILITARY_TRADITION_CIVIC" Name="Amount" Value="2"/>
+    <Row ModifierId="EC_AI_MILITARY_MILITARY_TRAINING_CIVIC" Name="Amount" Value="2"/>
+    <Row ModifierId="EC_AI_MILITARY_DEFENSIVE_TACTICS_CIVIC" Name="Amount" Value="3"/>
+    <Row ModifierId="EC_AI_MILITARY_MERCENARIES_CIVIC" Name="Amount" Value="3"/>
+    <Row ModifierId="EC_AI_MILITARY_NATIONALISM_CIVIC" Name="Amount" Value="4"/>
+    <Row ModifierId="EC_AI_MILITARY_SCORCHED_EARTH_CIVIC" Name="Amount" Value="4"/>
+    <Row ModifierId="EC_AI_MILITARY_MOBILIZATION_CIVIC" Name="Amount" Value="5"/>
+    <Row ModifierId="EC_AI_MILITARY_RAPID_DEPLOYMENT_CIVIC" Name="Amount" Value="5"/>
+  </ModifierArguments>
+</GameData>

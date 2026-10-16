@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <Row Tag="LOC_EC_ARCHIVE_STATUS" Language="zh_Hans_CN"><Text>附庸身份（系统记录）</Text></Row>
+    <Row Tag="LOC_EC_ARCHIVE_STATUS" Language="en_US"><Text>Archived identity (system record)</Text></Row>
+    <!-- Simplified Chinese -->
+    <Row Tag="LOC_EC_OBSERVATION_ONLY_NAME" Language="zh_Hans_CN">
+      <Text>终局观测模式</Text>
+    </Row>
+    <Row Tag="LOC_EC_OBSERVATION_ONLY_DESC" Language="zh_Hans_CN">
+      <Text>只记录文明实力、灭国比例和觉醒候选。完整实力比较需开启“单人实力统计”。开启观测时不执行附庸演练、城市转移、实验加成或宣战。默认开启。</Text>
+    </Row>
+    <Row Tag="LOC_EC_API_PROBE_NAME" Language="zh_Hans_CN">
+      <Text>附庸接口诊断</Text>
+    </Row>
+    <Row Tag="LOC_EC_API_PROBE_DESC" Language="zh_Hans_CN">
+      <Text>记录文明状态及城市、玩家和胜利相关接口。开局尚未建城时，会在后续回合补查城市，最多四次。仅记录信息，不移交城市、删除单位或修改胜利规则。默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_WAR_OBSERVATION_TEST_NAME" Language="zh_Hans_CN">
+      <Text>战争战果观测</Text>
+    </Row>
+    <Row Tag="LOC_EC_WAR_OBSERVATION_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需开启终局观测模式。记录战争开始、结束和城市被攻占的证据，每次只检查有限数量的文明组合。不会宣战、移交城市或发出附庸请求，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_PLAYER_CONSENT_TEST_NAME" Language="zh_Hans_CN">
+      <Text>玩家附庸确认演练</Text>
+    </Row>
+    <Row Tag="LOC_EC_PLAYER_CONSENT_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需关闭终局观测模式。在单人局向玩家发出一次演练请求，测试接受、拒绝和稍后决定。只记录选择，不移交城市或处理军队，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_METRIC_BRIDGE_TEST_NAME" Language="zh_Hans_CN">
+      <Text>单人实力统计</Text>
+    </Row>
+    <Row Tag="LOC_EC_METRIC_BRIDGE_TEST_DESC" Language="zh_Hans_CN">
+      <Text>为终局观测、附庸演练和资格观测提供完整的军力、科技、文化和经济统计。仅限单人局；不转移城市或改变产出，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_ELIGIBILITY_OBSERVATION_TEST_NAME" Language="zh_Hans_CN">
+      <Text>附庸资格观测</Text>
+    </Row>
+    <Row Tag="LOC_EC_ELIGIBILITY_OBSERVATION_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需同时开启单人实力统计与终局观测模式。记录实力差距、战争证据和保护状态是否满足附庸门槛；信息不完整时不判定符合资格。不会发出请求或移交城市，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_DEBUG_TIMING_NAME" Language="zh_Hans_CN">
+      <Text>终局性能计时</Text>
+    </Row>
+    <Row Tag="LOC_EC_DEBUG_TIMING_DESC" Language="zh_Hans_CN">
+      <Text>将实力统计、战争组合采样和附庸资格观测的耗时与检查数量写入日志，便于检查回合性能。默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_TITLE" Language="zh_Hans_CN">
+      <Text>附庸请求演练</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_BODY" Language="zh_Hans_CN">
+      <Text>{1} 提出附庸请求。此演练只记录你的决定，不改变城市或军队。请求将在第 {2} 回合到期。</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_ACCEPT" Language="zh_Hans_CN">
+      <Text>接受演练请求</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_REJECT" Language="zh_Hans_CN">
+      <Text>拒绝</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_LATER" Language="zh_Hans_CN">
+      <Text>稍后决定</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_TEST_NAME" Language="zh_Hans_CN">
+      <Text>影子附庸演练</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需关闭终局观测模式；完整实力比较请开启“单人实力统计”。为强弱电脑文明建立模拟附庸档案，演练自治度、项目选择和读档恢复；不转移城市或删除军队。默认关闭，实际产出效果由附庸项目加成实验另行控制。</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_LIMIT_NAME" Language="zh_Hans_CN">
+      <Text>影子附庸数量上限</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_LIMIT_DESC" Language="zh_Hans_CN">
+      <Text>影子附庸演练最多同时建立的电脑附庸档案数，默认 1。只对模拟档案生效，不会据此移交城市。</Text>
+    </Row>
+    <Row Tag="LOC_EC_PROJECT_EFFECTS_TEST_NAME" Language="zh_Hans_CN">
+      <Text>附庸项目加成实验</Text>
+    </Row>
+    <Row Tag="LOC_EC_PROJECT_EFFECTS_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需关闭终局观测模式，并有影子附庸项目完成。按军事、经济、科技或文化方向支持或削弱宗主；每种效果在同一宗主下最多累计 3 次，达到上限后仍结算自治度。旧实验局中无法计数的加成会暂停追加。默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DRY_RUN_NAME" Language="zh_Hans_CN">
+      <Text>觉醒流程演练</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DRY_RUN_DESC" Language="zh_Hans_CN">
+      <Text>需关闭终局观测模式。记录觉醒触发、候选及准备、征服、决战阶段的推进，不宣战、不添加加成或改变胜利。可独立开启演练，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ACTIONS_TEST_NAME" Language="zh_Hans_CN">
+      <Text>觉醒战争与加成实验</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ACTIONS_TEST_DESC" Language="zh_Hans_CN">
+      <Text>仅限单人局：需启用觉醒终局，关闭终局观测模式与觉醒流程演练。准备期增强产能、粮食与军队生产，征服期再增强黄金收益，决战期再增强科技与文化；不直接增加部队战斗力。征服期向未受保护的电脑文明宣战，决战期向玩家宣战。默认关闭；决战前限制觉醒AI胜利，决战解除限制。真实附庸需另开真实模式。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_PREP_TURNS_NAME" Language="zh_Hans_CN">
+      <Text>觉醒准备期回合数</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_PREP_TURNS_DESC" Language="zh_Hans_CN">
+      <Text>标准速度下从觉醒触发到进入征服期的准备时间，默认 20 回合。新觉醒记录会按游戏速度调整。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_CONQUEST_TURNS_NAME" Language="zh_Hans_CN">
+      <Text>觉醒征服期回合数</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_CONQUEST_TURNS_DESC" Language="zh_Hans_CN">
+      <Text>标准速度下从征服期开始到进入决战期的时间，默认 50 回合。新觉醒记录会按游戏速度调整。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ENABLED_NAME" Language="zh_Hans_CN">
+      <Text>启用觉醒终局</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ENABLED_DESC" Language="zh_Hans_CN">
+      <Text>允许达到门槛后出现觉醒候选。实际战争和加成还需开启觉醒战争与加成实验，并关闭终局观测模式与觉醒流程演练。默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_MIN_TURN_NAME" Language="zh_Hans_CN">
+      <Text>觉醒最早触发回合</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_MIN_TURN_DESC" Language="zh_Hans_CN">
+      <Text>按标准速度设置最早触发回合，默认 120；实际回合随游戏速度缩放（史诗 180、马拉松 360）。到达后仍需满足时代或灭国比例门槛。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ERA_NAME" Language="zh_Hans_CN">
+      <Text>觉醒触发时代</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ERA_DESC" Language="zh_Hans_CN">
+      <Text>默认工业时代。满足最早触发回合后，文明达到此时代或达到设定灭国比例，即满足觉醒触发门槛。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DEAD_PERCENT_NAME" Language="zh_Hans_CN">
+      <Text>觉醒灭国比例（%）</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DEAD_PERCENT_DESC" Language="zh_Hans_CN">
+      <Text>按开局主要文明总数计算灭国比例，默认 30%。满足最早触发回合后，达到此比例或设定时代，即满足觉醒触发门槛。</Text>
+    </Row>
+    <!-- English fallback -->
+    <Row Tag="LOC_EC_OBSERVATION_ONLY_NAME" Language="en_US">
+      <Text>Endgame Observation Mode</Text>
+    </Row>
+    <Row Tag="LOC_EC_OBSERVATION_ONLY_DESC" Language="en_US">
+      <Text>Records civilization strength, collapse percentage and awakening candidates. Complete strength comparisons require Single-Player Strength Statistics. Observation blocks vassal rehearsals, city transfers, experimental bonuses and declarations of war. Enabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_API_PROBE_NAME" Language="en_US">
+      <Text>Vassal Interface Diagnostics</Text>
+    </Row>
+    <Row Tag="LOC_EC_API_PROBE_DESC" Language="en_US">
+      <Text>Logs civilization status and city, player and victory interfaces. If no cities exist at startup, checks city objects again on later samples, up to four times. Records information without transferring cities, deleting units or changing victory rules. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_WAR_OBSERVATION_TEST_NAME" Language="en_US">
+      <Text>War Outcome Observation</Text>
+    </Row>
+    <Row Tag="LOC_EC_WAR_OBSERVATION_TEST_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode. Records wars, peace and captured-city evidence, checking a limited number of civilization pairs per sample. Does not declare wars, transfer cities or send vassal requests. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_PLAYER_CONSENT_TEST_NAME" Language="en_US">
+      <Text>Player Vassal Consent Rehearsal</Text>
+    </Row>
+    <Row Tag="LOC_EC_PLAYER_CONSENT_TEST_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode to be disabled. Sends one rehearsal request in a single-player game to test accepting, rejecting or deferring. Records the choice without transferring cities or handling armies. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_METRIC_BRIDGE_TEST_NAME" Language="en_US">
+      <Text>Single-Player Strength Statistics</Text>
+    </Row>
+    <Row Tag="LOC_EC_METRIC_BRIDGE_TEST_DESC" Language="en_US">
+      <Text>Provides complete military, science, culture and economy statistics for endgame observation, vassal rehearsals and eligibility observation. Single-player only; does not transfer cities or change yields. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_ELIGIBILITY_OBSERVATION_TEST_NAME" Language="en_US">
+      <Text>Vassal Eligibility Observation</Text>
+    </Row>
+    <Row Tag="LOC_EC_ELIGIBILITY_OBSERVATION_TEST_DESC" Language="en_US">
+      <Text>Requires Single-Player Strength Statistics and Endgame Observation Mode. Records whether strength gaps, war evidence and protection status meet vassal thresholds. Incomplete information blocks eligibility. Does not send requests or transfer cities. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_DEBUG_TIMING_NAME" Language="en_US">
+      <Text>Endgame Performance Timing</Text>
+    </Row>
+    <Row Tag="LOC_EC_DEBUG_TIMING_DESC" Language="en_US">
+      <Text>Logs time and object counts for strength statistics, war-pair sampling and vassal eligibility observation to inspect turn performance. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_TITLE" Language="en_US">
+      <Text>Vassal Request Rehearsal</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_BODY" Language="en_US">
+      <Text>{1} proposes a vassal agreement. This rehearsal only records your decision; cities and armies remain unchanged. The request expires on turn {2}.</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_ACCEPT" Language="en_US">
+      <Text>Accept Rehearsal Request</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_REJECT" Language="en_US">
+      <Text>Reject</Text>
+    </Row>
+    <Row Tag="LOC_EC_CONSENT_LATER" Language="en_US">
+      <Text>Decide Later</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_TEST_NAME" Language="en_US">
+      <Text>Shadow Vassal Rehearsal</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_TEST_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode to be disabled. For complete strength comparisons, enable Single-Player Strength Statistics. Creates simulated vassal records for stronger and weaker AI civilizations to rehearse autonomy, projects and reload recovery. Does not transfer cities or delete armies. Disabled by default; actual yields are controlled separately by the project effects experiment.</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_LIMIT_NAME" Language="en_US">
+      <Text>Shadow Vassal Count Limit</Text>
+    </Row>
+    <Row Tag="LOC_EC_SHADOW_VASSAL_LIMIT_DESC" Language="en_US">
+      <Text>Maximum AI vassal records created by the shadow rehearsal at one time. Default: 1. Applies only to simulated records and does not transfer cities.</Text>
+    </Row>
+    <Row Tag="LOC_EC_PROJECT_EFFECTS_TEST_NAME" Language="en_US">
+      <Text>Vassal Project Effects Experiment</Text>
+    </Row>
+    <Row Tag="LOC_EC_PROJECT_EFFECTS_TEST_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode to be disabled and a completed shadow vassal project. Each military, economy, science or culture support or weakening effect can stack at most three times per overlord. Autonomy still advances at the cap. Uncounted effects from old experiments pause further attachments. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DRY_RUN_NAME" Language="en_US">
+      <Text>Awakening Process Rehearsal</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DRY_RUN_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode to be disabled. Records awakening triggers, candidates and progression through preparation, conquest and showdown, without wars, bonuses or victory changes. Can be enabled independently for rehearsal. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ACTIONS_TEST_NAME" Language="en_US">
+      <Text>Awakening War and Bonus Experiment</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ACTIONS_TEST_DESC" Language="en_US">
+      <Text>Single-player only. Requires Enable Endgame Awakening, with observation and rehearsal disabled. Preparation boosts production, food and military unit production; conquest adds gold; showdown adds science and culture. Awakening never directly increases unit combat strength. Declares war on unprotected AI during conquest and on the player during showdown. Disabled by default. Awakening AI victory is locked until showdown. Real vassal transfers require Native Vassal Mode separately.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_PREP_TURNS_NAME" Language="en_US">
+      <Text>Awakening Preparation Turns</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_PREP_TURNS_DESC" Language="en_US">
+      <Text>Preparation time between awakening and conquest at Standard speed. Default: 20 turns. New awakening records scale the duration to game speed.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_CONQUEST_TURNS_NAME" Language="en_US">
+      <Text>Awakening Conquest Turns</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_CONQUEST_TURNS_DESC" Language="en_US">
+      <Text>Time between the start of conquest and showdown at Standard speed. Default: 50 turns. New awakening records scale the duration to game speed.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ENABLED_NAME" Language="en_US">
+      <Text>Enable Endgame Awakening</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ENABLED_DESC" Language="en_US">
+      <Text>Allows awakening candidates once thresholds are met. Actual wars and bonuses also require the war and bonus experiment, with observation and process rehearsal disabled. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_MIN_TURN_NAME" Language="en_US">
+      <Text>Earliest Awakening Turn</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_MIN_TURN_DESC" Language="en_US">
+      <Text>Earliest trigger turn at Standard speed, scaled to the selected game speed. Default: Standard 120, Epic 180, Marathon 360. The era or civilization collapse threshold must also be met.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ERA_NAME" Language="en_US">
+      <Text>Awakening Trigger Era</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_ERA_DESC" Language="en_US">
+      <Text>Default: Industrial Era. After the earliest awakening turn, reaching this era or the configured civilization collapse percentage meets the awakening trigger threshold.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DEAD_PERCENT_NAME" Language="en_US">
+      <Text>Awakening Collapse Percentage</Text>
+    </Row>
+    <Row Tag="LOC_EC_AWAKENING_DEAD_PERCENT_DESC" Language="en_US">
+      <Text>Percentage of starting major civilizations that have been eliminated. Default: 30%. After the earliest awakening turn, meeting this percentage or the configured era meets the awakening trigger threshold.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHORT_NAME" Language="zh_Hans_CN">
+      <Text>附庸</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TITLE" Language="zh_Hans_CN">
+      <Text>附庸与终局</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TOOLTIP" Language="zh_Hans_CN">
+      <Text>查看附庸档案、自治项目和觉醒状态。当前为只读总览。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CLOSE" Language="zh_Hans_CN">
+      <Text>关闭总览</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SUMMARY" Language="zh_Hans_CN">
+      <Text>当前模式：{1}    单人实力统计：{2}[NEWLINE]觉醒状态：{3}</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NOTICE" Language="zh_Hans_CN">
+      <Text>影子附庸是演练档案，尚未接管城市；真实附庸与复国还未接通。这里只显示你已接触的文明。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_READ_ONLY" Language="zh_Hans_CN">
+      <Text>只读总览 · 不发起城市移交、宣战或复国</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NATIVE_PENDING" Language="zh_Hans_CN">
+      <Text>真实附庸与复国事务尚未接通；当前不会提交城市、单位或玩家变更。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_UNKNOWN" Language="zh_Hans_CN">
+      <Text>资格观察暂不可用</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_OBSERVED" Language="zh_Hans_CN">
+      <Text>附庸候选（仅观察）</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_INVALIDATED" Language="zh_Hans_CN">
+      <Text>附庸候选已失效</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_DETAILS" Language="zh_Hans_CN">
+      <Text>资格记录：{1}    层级：{2}[NEWLINE]最后采样：第{3}回合    样本：{4}</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_EMPTY" Language="zh_Hans_CN">
+      <Text>当前没有已接触文明的附庸档案。观测模式不会自动建立档案；影子附庸需在新测试局单独开启演练。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNKNOWN" Language="zh_Hans_CN">
+      <Text>暂不可用</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNMET" Language="zh_Hans_CN">
+      <Text>尚未接触的文明</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SUPPORT" Language="zh_Hans_CN">
+      <Text>支持宗主</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_WEAKEN" Language="zh_Hans_CN">
+      <Text>削弱宗主</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_MILITARY" Language="zh_Hans_CN">
+      <Text>军事</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ECONOMY" Language="zh_Hans_CN">
+      <Text>经济</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SCIENCE" Language="zh_Hans_CN">
+      <Text>科技</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CULTURE" Language="zh_Hans_CN">
+      <Text>文化</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_GENERAL" Language="zh_Hans_CN">
+      <Text>综合</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_DETAILS" Language="zh_Hans_CN">
+      <Text>宗主：{1}    自治度：{2}/100[NEWLINE]项目：{3} · {4}    本期截止：第{5}回合</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_OBSERVATION" Language="zh_Hans_CN">
+      <Text>观测模式</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_EXPERIMENT" Language="zh_Hans_CN">
+      <Text>实验模式</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ENABLED" Language="zh_Hans_CN">
+      <Text>已开启</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_DISABLED" Language="zh_Hans_CN">
+      <Text>已关闭</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TRIGGER_ONLY" Language="zh_Hans_CN">
+      <Text>仅观测触发条件</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NOT_TRIGGERED" Language="zh_Hans_CN">
+      <Text>尚未建立觉醒记录</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_LOCKED" Language="zh_Hans_CN">
+      <Text>尚未触发</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TRIGGERED" Language="zh_Hans_CN">
+      <Text>已触发</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_PREPARATION" Language="zh_Hans_CN">
+      <Text>准备期</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CONQUEST" Language="zh_Hans_CN">
+      <Text>征服期</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHOWDOWN" Language="zh_Hans_CN">
+      <Text>决战期</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_RESOLVED" Language="zh_Hans_CN">
+      <Text>已结束</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHADOW" Language="zh_Hans_CN">
+      <Text>影子附庸（演练）</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ARCHIVE_UNKNOWN" Language="zh_Hans_CN">
+      <Text>档案暂不可用</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNSUPPORTED" Language="zh_Hans_CN">
+      <Text>此总览目前仅支持存活的人类玩家所在的单人游戏。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NO_DATA" Language="zh_Hans_CN">
+      <Text>当前无法读取附庸档案，请返回单人测试局。</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHORT_NAME" Language="en_US">
+      <Text>Vassals</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TITLE" Language="en_US">
+      <Text>Vassals and Endgame</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TOOLTIP" Language="en_US">
+      <Text>View vassal archives, autonomy projects and awakening status. This overview is read-only.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CLOSE" Language="en_US">
+      <Text>Close overview</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SUMMARY" Language="en_US">
+      <Text>Mode: {1}    Single-player statistics: {2}[NEWLINE]Awakening: {3}</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NOTICE" Language="en_US">
+      <Text>Shadow vassals are rehearsal records; their cities have not been transferred. Territorial vassalage and restoration are not yet connected. Only civilizations you have met are shown.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_READ_ONLY" Language="en_US">
+      <Text>Read-only overview · No city transfer, declaration of war or restoration</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NATIVE_PENDING" Language="en_US">
+      <Text>Territorial vassalage and restoration are not connected; no city, unit or player mutation will be submitted.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_UNKNOWN" Language="en_US">
+      <Text>Eligibility observation unavailable</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_OBSERVED" Language="en_US">
+      <Text>Vassal candidate (observation only)</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_INVALIDATED" Language="en_US">
+      <Text>Vassal candidate invalidated</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CANDIDATE_DETAILS" Language="en_US">
+      <Text>Eligibility record: {1}    Tier: {2}[NEWLINE]Last sample: turn {3}    Samples: {4}</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_EMPTY" Language="en_US">
+      <Text>No vassal archives for known civilizations. Observation mode does not create archives. Enable the shadow vassal rehearsal in a separate new test game.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNKNOWN" Language="en_US">
+      <Text>Unavailable</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNMET" Language="en_US">
+      <Text>Unmet civilization</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SUPPORT" Language="en_US">
+      <Text>Support overlord</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_WEAKEN" Language="en_US">
+      <Text>Weaken overlord</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_MILITARY" Language="en_US">
+      <Text>Military</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ECONOMY" Language="en_US">
+      <Text>Economy</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SCIENCE" Language="en_US">
+      <Text>Science</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CULTURE" Language="en_US">
+      <Text>Culture</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_GENERAL" Language="en_US">
+      <Text>General</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_DETAILS" Language="en_US">
+      <Text>Overlord: {1}    Autonomy: {2}/100[NEWLINE]Project: {3} · {4}    Due: turn {5}</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_OBSERVATION" Language="en_US">
+      <Text>Observation</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_EXPERIMENT" Language="en_US">
+      <Text>Experiment</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ENABLED" Language="en_US">
+      <Text>Enabled</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_DISABLED" Language="en_US">
+      <Text>Disabled</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TRIGGER_ONLY" Language="en_US">
+      <Text>Observing trigger conditions only</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NOT_TRIGGERED" Language="en_US">
+      <Text>No awakening record yet</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_LOCKED" Language="en_US">
+      <Text>Not triggered</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_TRIGGERED" Language="en_US">
+      <Text>Triggered</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_PREPARATION" Language="en_US">
+      <Text>Preparation</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_CONQUEST" Language="en_US">
+      <Text>Conquest</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHOWDOWN" Language="en_US">
+      <Text>Showdown</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_RESOLVED" Language="en_US">
+      <Text>Resolved</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_SHADOW" Language="en_US">
+      <Text>Shadow vassal (rehearsal)</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_ARCHIVE_UNKNOWN" Language="en_US">
+      <Text>Archive unavailable</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_UNSUPPORTED" Language="en_US">
+      <Text>This overview currently supports a living human player in a single-player game.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_NO_DATA" Language="en_US">
+      <Text>Vassal archives are unavailable. Please return to a single-player test game.</Text>
+    </Row>
+    <Row Tag="LOC_EC_AI_MILITARY_PRODUCTION_TEST_NAME" Language="zh_Hans_CN">
+      <Text>AI 战前战时爆兵</Text>
+    </Row>
+    <Row Tag="LOC_EC_AI_MILITARY_PRODUCTION_TEST_DESC" Language="zh_Hans_CN">
+      <Text>需关闭终局观测模式。为存活的电脑主要文明提供有限的战前军事单位生产加成，并在原生战争状态下追加战时动员加成；不影响人类、不直接生成单位，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_EC_AI_MILITARY_PRODUCTION_TEST_NAME" Language="en_US">
+      <Text>AI Pre-war and Wartime Recruitment</Text>
+    </Row>
+    <Row Tag="LOC_EC_AI_MILITARY_PRODUCTION_TEST_DESC" Language="en_US">
+      <Text>Requires Endgame Observation Mode to be disabled. Gives living major AI civilizations bounded military unit production before war and an additional mobilization bonus while the native war requirement is true. Does not affect humans or directly spawn units. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_FRESH" Language="zh_Hans_CN"><Text>已收到有效数据</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_FRESH" Language="en_US"><Text>Valid statistics received</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_WAITING" Language="zh_Hans_CN"><Text>等待统计数据</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_WAITING" Language="en_US"><Text>Waiting for statistics</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_STALE" Language="zh_Hans_CN"><Text>统计数据已过期</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRICS_STALE" Language="en_US"><Text>Statistics are stale</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_LEGACY_OWNER" Language="zh_Hans_CN"><Text>旧存档记录所属玩家不一致，已暂停</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_LEGACY_OWNER" Language="en_US"><Text>Legacy save owner mismatch; paused</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRIC_DATA" Language="zh_Hans_CN"><Text>统计数据：{1}</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_METRIC_DATA" Language="en_US"><Text>Statistics: {1}</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_DATA" Language="zh_Hans_CN"><Text>等待完整统计数据</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_DATA" Language="en_US"><Text>Waiting for complete statistics</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_HOLD" Language="zh_Hans_CN"><Text>等待持续优势确认</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_HOLD" Language="en_US"><Text>Waiting for sustained advantage evidence</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_WAR" Language="zh_Hans_CN"><Text>等待战争及关键胜利证据</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_WAR" Language="en_US"><Text>Waiting for war and key victory evidence</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_PROTECTED" Language="zh_Hans_CN"><Text>该文明受到保护</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_PROTECTED" Language="en_US"><Text>This civilization is protected</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_PROTECTION_UNKNOWN" Language="zh_Hans_CN"><Text>保护状态暂不可用</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_PROTECTION_UNKNOWN" Language="en_US"><Text>Protection status unavailable</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_RESEARCH" Language="zh_Hans_CN"><Text>科技或市政进度不足</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_RESEARCH" Language="en_US"><Text>Technology or civic progress is insufficient</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_THRESHOLDS" Language="zh_Hans_CN"><Text>实力优势未达到要求</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_THRESHOLDS" Language="en_US"><Text>Strength advantage is insufficient</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_NO_OVERLORD" Language="zh_Hans_CN"><Text>暂无符合条件的宗主</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_NO_OVERLORD" Language="en_US"><Text>No eligible overlord</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_READY" Language="zh_Hans_CN"><Text>资格条件已满足，等待真实玩法接通</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_READY" Language="en_US"><Text>Eligible; native gameplay is pending</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_CONSENT" Language="zh_Hans_CN"><Text>需要玩家明确同意</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_REASON_CONSENT" Language="en_US"><Text>Explicit player consent required</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_TIER_REGULAR" Language="zh_Hans_CN"><Text>常规优势</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_TIER_REGULAR" Language="en_US"><Text>Regular advantage</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_TIER_EXTREME" Language="zh_Hans_CN"><Text>极端优势</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_TIER_EXTREME" Language="en_US"><Text>Extreme advantage</Text></Row>
+    <Row Tag="LOC_EC_OVERVIEW_AWAKENING_TIMER" Language="zh_Hans_CN">
+      <Text>{1} · {2}预计于第 {3} 回合开始（剩余 {4} 回合）</Text>
+    </Row>
+    <Row Tag="LOC_EC_OVERVIEW_AWAKENING_TIMER" Language="en_US">
+      <Text>{1} · {2} expected on turn {3} ({4} turns remaining)</Text>
+    </Row>
+    <Row Tag="LOC_EC_NATIVE_MODE_NAME" Language="zh_Hans_CN"><Text>真实附庸测试模式</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_MODE_NAME" Language="en_US"><Text>Native vassal test mode</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_MODE_DESC" Language="zh_Hans_CN"><Text>关闭观测模式并启用实力统计、资格与战争观察后接通真实事务。生产归档暂停，复国时恢复；不支持的生产恢复会在移交前阻止。仅单人独立测试局。</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_MODE_DESC" Language="en_US"><Text>Enable actual transactions with observation off and metrics/eligibility/war tracking on. Production is archived until restoration. Unsupported restoration blocks transfer. Single-player test games only.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CONSENT_TITLE" Language="zh_Hans_CN"><Text>附庸与复国确认</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CONSENT_TITLE" Language="en_US"><Text>Vassalization and restoration</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ATTACH_BODY" Language="zh_Hans_CN"><Text>{1} 提出真实附庸请求。接受后全部约定城市归宗主管理，你的单位将移除，原生产队列与产能归档暂停；文明身份保留，自治达标后复国恢复。第 {2} 回合到期。</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ATTACH_BODY" Language="en_US"><Text>{1} proposes vassalization. Your archived cities transfer and units are removed. Production is paused in the archive until autonomy permits restoration of your original civilization. Expires on turn {2}.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORE_BODY" Language="zh_Hans_CN"><Text>对 {1} 的自治已达标。确认后归还档案城市、恢复首都及原生产队列与产能，重新独立。第 {2} 回合到期。</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORE_BODY" Language="en_US"><Text>Autonomy under {1} is complete. Confirm to return archived cities, restore the capital and archived production, and become independent. Expires on turn {2}.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ACCEPT" Language="zh_Hans_CN"><Text>确认执行</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ACCEPT" Language="en_US"><Text>Confirm</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_OPERATION_NOTICE" Language="zh_Hans_CN"><Text>真实附庸模式：提交时复核资格与保护。玩家请求需明确确认；结果不明则暂停。</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_OPERATION_NOTICE" Language="en_US"><Text>Native vassal mode: qualification and protection are checked on submission. Human consent is required; uncertain outcomes pause.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_VASSAL" Language="zh_Hans_CN"><Text>附庸（真实城市已移交）</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_VASSAL" Language="en_US"><Text>Vassal (cities transferred)</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORING" Language="zh_Hans_CN"><Text>复国恢复中</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORING" Language="en_US"><Text>Restoration in progress</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ATTACH" Language="zh_Hans_CN"><Text>提交附庸请求</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ATTACH" Language="en_US"><Text>Request vassalization</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORE" Language="zh_Hans_CN"><Text>申请复国</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_RESTORE" Language="en_US"><Text>Request restoration</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PROJECT_SWITCH" Language="zh_Hans_CN"><Text>切换支持 / 削弱项目</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PROJECT_SWITCH" Language="en_US"><Text>Switch support / weaken</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PRODUCTION_PENDING" Language="zh_Hans_CN"><Text>城市已归还，正在核对原生产队列与产能。</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PRODUCTION_PENDING" Language="en_US"><Text>Cities returned; verifying archived production queue and progress.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_FOOTER" Language="zh_Hans_CN"><Text>原生产归档暂停；人类复国恢复队列，AI重选生产并返还原投入</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_FOOTER" Language="en_US"><Text>Production pauses in the archive. Humans recover their queue; AI chooses production and receives its archived investment.</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PRODUCTION_ARCHIVE" Language="zh_Hans_CN"><Text>原生产档案</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_PRODUCTION_ARCHIVE" Language="en_US"><Text>Archived production</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_QUEUE_EMPTY" Language="zh_Hans_CN"><Text>空</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_QUEUE_EMPTY" Language="en_US"><Text>Empty</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ARCHIVE_PRODUCTION_DETAILS" Language="zh_Hans_CN"><Text>原队列：{1}[NEWLINE]原投入：{2}（共{3}点）[NEWLINE]{4} · {5} · 剩余{6}点</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_ARCHIVE_PRODUCTION_DETAILS" Language="en_US"><Text>Original queue: {1}[NEWLINE]Investment: {2} ({3} total)[NEWLINE]{4} · {5} · {6} remaining</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_AI_CREDIT_POLICY" Language="zh_Hans_CN"><Text>AI重选生产，返还原投入</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_AI_CREDIT_POLICY" Language="en_US"><Text>AI chooses production; archived investment is returned</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_QUEUE_POLICY" Language="zh_Hans_CN"><Text>复国恢复原队列与投入</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_QUEUE_POLICY" Language="en_US"><Text>Restore the original queue and investment</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_REFUND_POLICY" Language="zh_Hans_CN"><Text>已建建筑保留，原投入返还自选生产</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_REFUND_POLICY" Language="en_US"><Text>Keep completed buildings; return investment to your chosen production</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_REFUND_WAITING" Language="zh_Hans_CN"><Text>等待自选生产或精确返还条件</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_HUMAN_REFUND_WAITING" Language="en_US"><Text>Waiting for your production choice or an exact production grant</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_ARCHIVED" Language="zh_Hans_CN"><Text>归档暂停</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_ARCHIVED" Language="en_US"><Text>Paused in archive</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_WAITING" Language="zh_Hans_CN"><Text>等待AI生产</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_WAITING" Language="en_US"><Text>Waiting for AI production</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_SENT" Language="zh_Hans_CN"><Text>核对返还结果</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_SENT" Language="en_US"><Text>Verifying returned production</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_COMPLETE" Language="zh_Hans_CN"><Text>已完成</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_COMPLETE" Language="en_US"><Text>Complete</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_UNKNOWN" Language="zh_Hans_CN"><Text>结果不明，已暂停</Text></Row>
+    <Row Tag="LOC_EC_NATIVE_CREDIT_UNKNOWN" Language="en_US"><Text>Outcome unknown; paused</Text></Row>
+    <Row Tag="LOC_EC_VICTORY_LOCK" Language="zh_Hans_CN"><Text>觉醒危机：决战前胜利锁定</Text></Row>
+    <Row Tag="LOC_EC_VICTORY_LOCK" Language="en_US"><Text>Awakening crisis: victory locked until showdown</Text></Row>
+  </LocalizedText>
+</GameData>

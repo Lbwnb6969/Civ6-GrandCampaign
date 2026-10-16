@@ -1,0 +1,7 @@
+Civ6_GrandCampaign_Endgame
+source_repo=Civ6_GrandCampaign_Endgame
+source_commit=8c1b41e7e7a8328111efbe1be28912a0f1e7407d
+
+Civ6_GrandCampaign_Stability
+source_repo=Civ6_GrandCampaign_Stability
+source_commit=2b9dc959dceeecbd9b4602e47a7d66faa27233ab

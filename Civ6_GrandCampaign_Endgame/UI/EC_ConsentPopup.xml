@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContextDefaults Name="EC_ConsentPopup" ColorSet="BodyTextCool" Style="FontNormal22" FontStyle="Stroke">
+  <Include File="PopupDialog" />
+  <MakeInstance Name="PopupDialog" />
+</ContextDefaults>

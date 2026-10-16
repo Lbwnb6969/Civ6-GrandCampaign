@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <IconDefinitions>
+    <Row Name="ICON_CIVIC_EC_ARCHIVE_STATUS" Atlas="ICON_ATLAS_CIVICS" Index="0" />
+    <Row Name="ICON_CIVIC_EC_ARCHIVE_STATUS_FOW" Atlas="ICON_ATLAS_CIVICS_FOW" Index="0" />
+  </IconDefinitions>
+</GameData>

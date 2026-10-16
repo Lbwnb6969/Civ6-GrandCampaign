@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <Modifiers>
+    <Row ModifierId="EC_PROJECT_SUPPORT_MILITARY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_MILITARY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_MILITARY_UNITS_PRODUCTION"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_ECONOMY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_ECONOMY" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_SCIENCE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_SCIENCE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_CULTURE" ModifierType="MODIFIER_PLAYER_CITIES_ADJUST_CITY_YIELD_CHANGE"/>
+  </Modifiers>
+  <ModifierArguments>
+    <Row ModifierId="EC_PROJECT_SUPPORT_MILITARY" Name="Amount" Value="10"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_MILITARY" Name="Amount" Value="-10"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_ECONOMY" Name="YieldType" Value="YIELD_GOLD"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_ECONOMY" Name="Amount" Value="2"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_ECONOMY" Name="YieldType" Value="YIELD_GOLD"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_ECONOMY" Name="Amount" Value="-2"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_SCIENCE" Name="YieldType" Value="YIELD_SCIENCE"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_SCIENCE" Name="Amount" Value="2"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_SCIENCE" Name="YieldType" Value="YIELD_SCIENCE"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_SCIENCE" Name="Amount" Value="-2"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
+    <Row ModifierId="EC_PROJECT_SUPPORT_CULTURE" Name="Amount" Value="2"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_CULTURE" Name="YieldType" Value="YIELD_CULTURE"/>
+    <Row ModifierId="EC_PROJECT_WEAKEN_CULTURE" Name="Amount" Value="-2"/>
+  </ModifierArguments>
+</GameData>

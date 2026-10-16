@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <IconDefinitions>
+    <!-- Reserve beliefs reuse the two vanilla pantheon glyphs.  Defining the
+         custom names at the data layer prevents the native UI from probing a
+         missing ICON_BELIEF_GMS_* entry before the replacement Lua remaps it. -->
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_01" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_02" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_03" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_04" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_05" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_GROWTH_06" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="19" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_01" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_02" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_03" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_04" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_05" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+    <Row Name="ICON_BELIEF_GMS_RESERVE_BORDER_06" Atlas="ICON_ATLAS_BELIEFS_PATHEON" Index="20" />
+  </IconDefinitions>
+</GameData>

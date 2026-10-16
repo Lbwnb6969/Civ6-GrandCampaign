@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Mod id="7b9b91d9-6ce7-4fc7-93c2-1c170ccbf401" version="1">
+  <Properties>
+    <Name>超大地图稳定性</Name>
+    <Description>为超大地图提供稳定性诊断、万神殿后备信条，以及可选的卫星分批开图和自然奇观安全模式。</Description>
+    <Created>1790847000</Created>
+    <Teaser>超大地图稳定性诊断与可选安全模式。</Teaser>
+    <Authors>Haikesi 项目</Authors>
+    <CompatibleVersions>2.0</CompatibleVersions>
+  </Properties>
+  <References>
+    <Mod id="1B28771A-C749-434B-9053-D1380C553DE9" title="Expansion: Rise and Fall" />
+    <Mod id="4873eb62-8ccc-4574-b784-dda455e74e68" title="Expansion: Gathering Storm" />
+  </References>
+  <ActionCriteria>
+    <Criteria id="GMS_PANTHEON_FALLBACK">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GMS_PANTHEON_FALLBACK</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="GMS_SATELLITE_SAFE_MODE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GMS_SATELLITE_SAFE_MODE</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="GMS_SATELLITE_CHUNKED_MODE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GMS_SATELLITE_CHUNKED_MODE</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+    <Criteria id="GMS_NATURAL_WONDER_SAFE_MODE">
+      <ConfigurationValueMatches>
+        <Group>Game</Group>
+        <ConfigurationId>GMS_NATURAL_WONDER_SAFE_MODE</ConfigurationId>
+        <Value>1</Value>
+      </ConfigurationValueMatches>
+    </Criteria>
+  </ActionCriteria>
+  <FrontEndActions>
+    <UpdateDatabase id="GMS_Config">
+      <File>Data/GMS_Config_FE.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="GMS_FrontEndText">
+      <File>Text/GMS_Text.xml</File>
+    </UpdateText>
+  </FrontEndActions>
+  <InGameActions>
+    <UpdateIcons id="GMS_Icons">
+      <Properties>
+        <LoadOrder>16889</LoadOrder>
+      </Properties>
+      <File>Data/GMS_Icons.xml</File>
+    </UpdateIcons>
+    <UpdateDatabase id="GMS_PantheonFallback">
+      <Properties>
+        <LoadOrder>16890</LoadOrder>
+      </Properties>
+      <Criteria>GMS_PANTHEON_FALLBACK</Criteria>
+      <File>Data/GMS_PantheonFallback.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="GMS_SatelliteSafeMode">
+      <Properties>
+        <LoadOrder>16891</LoadOrder>
+      </Properties>
+      <Criteria>GMS_SATELLITE_SAFE_MODE</Criteria>
+      <File>Data/GMS_SatelliteSafe.sql</File>
+    </UpdateDatabase>
+    <UpdateDatabase id="GMS_SatelliteChunkedMode">
+      <Properties>
+        <LoadOrder>16892</LoadOrder>
+      </Properties>
+      <Criteria>GMS_SATELLITE_CHUNKED_MODE</Criteria>
+      <File>Data/GMS_SatelliteSafe.sql</File>
+    </UpdateDatabase>
+    <UpdateText id="GMS_InGameText">
+      <File>Text/GMS_Text.xml</File>
+    </UpdateText>
+    <ReplaceUIScript id="GMS_PantheonChooser">
+      <Properties>
+        <LoadOrder>20000</LoadOrder>
+        <LuaContext>PantheonChooser</LuaContext>
+        <LuaReplace>UI/GMS_PantheonChooser.lua</LuaReplace>
+      </Properties>
+      <Criteria>GMS_PANTHEON_FALLBACK</Criteria>
+    </ReplaceUIScript>
+    <ReplaceUIScript id="GMS_NaturalWonderPopup">
+      <Properties>
+        <LoadOrder>20001</LoadOrder>
+        <LuaContext>NaturalWonderPopup</LuaContext>
+        <LuaReplace>UI/GMS_NaturalWonderPopup.lua</LuaReplace>
+      </Properties>
+      <Criteria>GMS_NATURAL_WONDER_SAFE_MODE</Criteria>
+    </ReplaceUIScript>
+    <AddGameplayScripts id="GMS_Gameplay">
+      <Properties>
+        <LoadOrder>16900</LoadOrder>
+      </Properties>
+      <File>GamePlay/GMS_GamePlay.lua</File>
+    </AddGameplayScripts>
+  </InGameActions>
+  <Files>
+    <File>Data/GMS_Config_FE.sql</File>
+    <File>Data/GMS_Icons.xml</File>
+    <File>Data/GMS_PantheonFallback.sql</File>
+    <File>Data/GMS_SatelliteSafe.sql</File>
+    <File>GamePlay/GMS_GamePlay.lua</File>
+    <File>Text/GMS_Text.xml</File>
+    <File>UI/GMS_PantheonChooser.lua</File>
+    <File>UI/GMS_NaturalWonderPopup.lua</File>
+  </Files>
+</Mod>
+

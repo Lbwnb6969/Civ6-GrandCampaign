@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+  <LocalizedText>
+    <!-- Simplified Chinese -->
+    <Row Tag="LOC_GMS_PANTHEON_FALLBACK_NAME" Language="zh_Hans_CN">
+      <Text>万神殿后备信条</Text>
+    </Row>
+    <Row Tag="LOC_GMS_PANTHEON_FALLBACK_DESC" Language="zh_Hans_CN">
+      <Text>增加 12 个后备万神殿信条。普通信条全部被选完后才显示，避免文明过多时无信条可选。默认开启；关闭后只使用原有信条。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_SAFE_MODE_NAME" Language="zh_Hans_CN">
+      <Text>卫星安全模式</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_SAFE_MODE_DESC" Language="zh_Hans_CN">
+      <Text>保留地球卫星项目和科学胜利进度，跳过一次性全图探索，用于排查大型地图开图崩溃。默认关闭；同时开启分批开图时，改为按回合揭示地图。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNKED_MODE_NAME" Language="zh_Hans_CN">
+      <Text>卫星分批开图</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNKED_MODE_DESC" Language="zh_Hans_CN">
+      <Text>地球卫星完成后，分多个回合揭示地图，避免一次性全图操作。默认关闭；开启后替代原版的瞬间全图探索。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNK_SIZE_NAME" Language="zh_Hans_CN">
+      <Text>卫星每回合地块上限</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNK_SIZE_DESC" Language="zh_Hans_CN">
+      <Text>所有卫星开图任务每回合共享的地块检查上限。默认 500，最大 10000；已探索地块也计入检查数量。仅在卫星分批开图开启时生效。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_NATURAL_WONDER_SAFE_MODE_NAME" Language="zh_Hans_CN">
+      <Text>自然奇观安全模式</Text>
+    </Row>
+    <Row Tag="LOC_GMS_NATURAL_WONDER_SAFE_MODE_DESC" Language="zh_Hans_CN">
+      <Text>发现自然奇观时跳过电影弹窗、镜头动画和临时视野锁，用于排查发现奇观时的界面卡死。保留发现事件，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_DEBUG_TIMING_NAME" Language="zh_Hans_CN">
+      <Text>稳定性性能计时</Text>
+    </Row>
+    <Row Tag="LOC_GMS_DEBUG_TIMING_DESC" Language="zh_Hans_CN">
+      <Text>每 5 回合将诊断扫描的耗时和城市、单位数量写入日志，便于检查回合性能。默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_CLIMATE_DIAGNOSTICS_NAME" Language="zh_Hans_CN">
+      <Text>气候与海平面诊断</Text>
+    </Row>
+    <Row Tag="LOC_GMS_CLIMATE_DIAGNOSTICS_DESC" Language="zh_Hans_CN">
+      <Text>每回合记录气候等级、首次观察到的海平面事件、下一次海平面上升和淹没数量。仅写诊断日志，不改变气候或地图，默认关闭。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SNAPSHOT_OBJECT_BUDGET_NAME" Language="zh_Hans_CN">
+      <Text>诊断扫描数量上限</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SNAPSHOT_OBJECT_BUDGET_DESC" Language="zh_Hans_CN">
+      <Text>每次稳定性诊断最多检查的城市和单位总数。默认 10000，最大 100000；超过上限就停止本次扫描，并将统计标记为不完整。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_DESC" Language="zh_Hans_CN">
+      <Text>城市成长速度 +10%。普通万神殿信条耗尽后可选的后备信条。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_DESC" Language="zh_Hans_CN">
+      <Text>城市边界扩张速度 +15%。普通万神殿信条耗尽后可选的后备信条。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_01_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 I</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_02_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 II</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_03_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 III</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_04_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 IV</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_05_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 V</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_06_NAME" Language="zh_Hans_CN">
+      <Text>丰饶余晖 VI</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_01_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 I</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_02_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 II</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_03_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 III</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_04_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 IV</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_05_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 V</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_06_NAME" Language="zh_Hans_CN">
+      <Text>拓土余晖 VI</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_05_DESC" Language="zh_Hans_CN">
+      <Text>城市成长速度 +10%。普通万神殿信条耗尽后可选的后备信条。</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_06_DESC" Language="zh_Hans_CN">
+      <Text>城市成长速度 +10%。普通万神殿信条耗尽后可选的后备信条。</Text>
+    </Row>
+    <!-- English fallback -->
+    <Row Tag="LOC_GMS_PANTHEON_FALLBACK_NAME" Language="en_US">
+      <Text>Reserve Pantheon Beliefs</Text>
+    </Row>
+    <Row Tag="LOC_GMS_PANTHEON_FALLBACK_DESC" Language="en_US">
+      <Text>Adds 12 reserve pantheon beliefs, shown only when all regular choices are taken. Prevents large civilization rosters from exhausting the pool. Enabled by default; disable to use only existing beliefs.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_SAFE_MODE_NAME" Language="en_US">
+      <Text>Satellite Safe Mode</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_SAFE_MODE_DESC" Language="en_US">
+      <Text>Keeps the Earth Satellite project and science victory progress, while skipping instant full-map exploration to investigate large-map crashes. Disabled by default. If incremental exploration is also enabled, the map is revealed over multiple turns.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNKED_MODE_NAME" Language="en_US">
+      <Text>Incremental Satellite Exploration</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNKED_MODE_DESC" Language="en_US">
+      <Text>Reveals the map over multiple turns after completing Earth Satellite, avoiding a single full-map operation. Disabled by default; replaces the original instant exploration when enabled.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNK_SIZE_NAME" Language="en_US">
+      <Text>Satellite Plot Limit per Turn</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SATELLITE_CHUNK_SIZE_DESC" Language="en_US">
+      <Text>Maximum plots checked per game turn, shared by all satellite exploration tasks. Default: 500; maximum: 10000. Already explored plots also count. Applies only to incremental satellite exploration.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_NATURAL_WONDER_SAFE_MODE_NAME" Language="en_US">
+      <Text>Natural Wonder Safe Mode</Text>
+    </Row>
+    <Row Tag="LOC_GMS_NATURAL_WONDER_SAFE_MODE_DESC" Language="en_US">
+      <Text>Skips the discovery movie, camera animation and temporary visibility lock when finding a natural wonder, to investigate frozen discovery screens. Keeps discovery events. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_DEBUG_TIMING_NAME" Language="en_US">
+      <Text>Stability Performance Timing</Text>
+    </Row>
+    <Row Tag="LOC_GMS_DEBUG_TIMING_DESC" Language="en_US">
+      <Text>Logs diagnostic scan times and city/unit counts every 5 turns to inspect turn performance. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_CLIMATE_DIAGNOSTICS_NAME" Language="en_US">
+      <Text>Climate and Sea Level Diagnostics</Text>
+    </Row>
+    <Row Tag="LOC_GMS_CLIMATE_DIAGNOSTICS_DESC" Language="en_US">
+      <Text>Logs climate level, first observed sea level events, the next sea level rise and submerged plot counts each turn. Records diagnostics without changing climate or the map. Disabled by default.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SNAPSHOT_OBJECT_BUDGET_NAME" Language="en_US">
+      <Text>Diagnostic Object Scan Limit</Text>
+    </Row>
+    <Row Tag="LOC_GMS_SNAPSHOT_OBJECT_BUDGET_DESC" Language="en_US">
+      <Text>Maximum combined city and unit objects checked per stability diagnostic scan. Default: 10000; maximum: 100000. Stops at the limit and marks the statistics incomplete.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_DESC" Language="en_US">
+      <Text>City growth rate +10%. A reserve belief available after regular pantheon choices are exhausted.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_DESC" Language="en_US">
+      <Text>City border expansion rate +15%. A reserve belief available after regular pantheon choices are exhausted.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_01_NAME" Language="en_US">
+      <Text>Abundance Afterglow I</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_02_NAME" Language="en_US">
+      <Text>Abundance Afterglow II</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_03_NAME" Language="en_US">
+      <Text>Abundance Afterglow III</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_04_NAME" Language="en_US">
+      <Text>Abundance Afterglow IV</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_05_NAME" Language="en_US">
+      <Text>Abundance Afterglow V</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_06_NAME" Language="en_US">
+      <Text>Abundance Afterglow VI</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_01_NAME" Language="en_US">
+      <Text>Expansion Afterglow I</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_02_NAME" Language="en_US">
+      <Text>Expansion Afterglow II</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_03_NAME" Language="en_US">
+      <Text>Expansion Afterglow III</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_04_NAME" Language="en_US">
+      <Text>Expansion Afterglow IV</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_05_NAME" Language="en_US">
+      <Text>Expansion Afterglow V</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_BORDER_06_NAME" Language="en_US">
+      <Text>Expansion Afterglow VI</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_05_DESC" Language="en_US">
+      <Text>City growth rate +10%. A reserve belief available after regular pantheon choices are exhausted.</Text>
+    </Row>
+    <Row Tag="LOC_GMS_RESERVE_GROWTH_06_DESC" Language="en_US">
+      <Text>City growth rate +10%. A reserve belief available after regular pantheon choices are exhausted.</Text>
+    </Row>
+  </LocalizedText>
+</GameData>
